@@ -37,10 +37,5 @@
     "DATABASE_URL": "@database-url",
     "DEBUG": "False",
     "PYTHONPATH": ".:/var/task"
-  },
-  "functions": {
-    "api/index.py": {
-      "includeFiles": "**"
-    }
   }
 }
