@@ -1,0 +1,72 @@
+# Archivos de base de datos local
+db.sqlite3
+*.sqlite3
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+
+# Archivos de desarrollo
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Archivos de editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos de Git
+.git/
+.gitignore
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de log
+*.log
+logs/
+
+# Archivos de migración (se pueden reconstruir)
+**/migrations/__pycache__/
+
+# Scripts de desarrollo local
+start_backend.bat
+reset_migrations.py
+check_*.py
+fix_*.py
+update_*.py
+verify_*.py
+initial_setup.py
+
+# Documentación local
+*.md
+INSTRUCCIONES_*.md
+LIMITES_*.md
+NUEVA_*.md
+NUEVAS_*.md
+RESTRICCIONES_*.md
+SISTEMA_*.md
+
+# Archivos de backup
+*.json
+data_backup.json
+datos_final.json
+datos.json
+
+# Media files (se sirven desde otro lugar en producción)
+media/
+
+# Archivos de node_modules si existen
+node_modules/

@@ -2,7 +2,6 @@
 Django==4.2.7
 djangorestframework==3.14.0
 django-cors-headers==4.3.1
-Pillow==10.1.0
 python-decouple==3.8
 requests==2.31.0
 
@@ -19,7 +18,14 @@ python-dotenv==1.0.0
 
 # Database
 psycopg2-binary==2.9.7
+dj-database-url==2.1.0
 
-# Optional data handling (skip if installation fails on Windows)
+# Vercel deployment
+whitenoise==6.6.0
+
+# Image processing (optimized for serverless)
+Pillow==10.1.0
+
+# Optional data handling (commented for faster builds)
 # pandas==2.1.3
 # numpy==1.25.2
