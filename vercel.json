@@ -2,10 +2,17 @@
   "version": 2,
   "builds": [
     {
-      "src": "wesolar/wsgi.py",
+      "src": "api/index.py",
       "use": "@vercel/python",
       "config": {
         "maxLambdaSize": "15mb",
+        "runtime": "python3.9"
+      }
+    },
+    {
+      "src": "build.py",
+      "use": "@vercel/python",
+      "config": {
         "runtime": "python3.9"
       }
     }
@@ -16,14 +23,24 @@
       "dest": "/static/$1"
     },
     {
+      "src": "/media/(.*)",
+      "dest": "/media/$1"
+    },
+    {
       "src": "/(.*)",
-      "dest": "wesolar/wsgi.py"
+      "dest": "/api/index.py"
     }
   ],
   "env": {
     "DEVELOPMENT": "False",
     "SECRET_KEY": "@secret-key",
     "DATABASE_URL": "@database-url",
-    "DEBUG": "False"
+    "DEBUG": "False",
+    "PYTHONPATH": ".:/var/task"
+  },
+  "functions": {
+    "api/index.py": {
+      "includeFiles": "**"
+    }
   }
 }
