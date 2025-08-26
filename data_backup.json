@@ -1,0 +1,95 @@
+[
+{
+  "model": "projects.solarproject",
+  "pk": 2,
+  "fields": {
+    "name": "Cooperativa Luz y Fuerza Villa General Belgrano",
+    "description": "Parque solar de 1 MW ubicado en Villa General Belgrano, Córdoba. La instalación cuenta con aproximadamente 1,515 módulos fotovoltaicos de marca Trina Solar modelo TSM-660DE21, con tecnología bifacial. Cada panel posee una potencia nominal de 660 Wp, totalizando una potencia instalada de 1 MW. Este proyecto de la Cooperativa Luz y Fuerza representa un hito en el desarrollo de energías renovables en la región, contribuyendo significativamente al suministro de energía limpia y sostenible.",
+    "location": "Villa General Belgrano, Córdoba, Argentina",
+    "status": "development",
+    "total_power_installed": "0.00",
+    "total_power_projected": "1000.00",
+    "available_power": "1000.00",
+    "price_per_wp_usd": "1.20",
+    "price_per_panel_usd": "792.00",
+    "panel_power_wp": "660.00",
+    "owners": "Cooperativa Luz y Fuerza Villa General Belgrano",
+    "expected_annual_generation": "1500000.00",
+    "financial_access_password": "iris2025",
+    "commercial_whatsapp": "+54 9 351 703-5589",
+    "funding_goal": "1200000.00",
+    "funding_raised": "0.00",
+    "funding_deadline": "2025-10-03",
+    "created_at": "2025-08-18T22:03:06.800Z",
+    "updated_at": "2025-08-19T14:45:55.476Z"
+  }
+},
+{
+  "model": "projects.solarproject",
+  "pk": 6,
+  "fields": {
+    "name": "Cooperativa Ganadera, Agrícola y de consumo Porteña LTDA.",
+    "description": "Instalación solar de 396 kWp ubicada en Porteña, Córdoba. La instalación consta de 600 módulos fotovoltaicos de marca Trina Solar modelo TSM-660DE21, con tecnología bifacial. Cada panel posee una potencia nominal de aproximadamente 660 Wp. Se emplean tres inversores Sungrow SG110CX-P2, del tipo string trifásico con una potencia nominal de 110 kW cada uno, que permiten una eficiente conversión de energía DC a AC para inyección a red. Esta marca de inversores, líder a nivel mundial, ofrece comunicación y monitoreo de la planta solar a través de una plataforma en línea llamada iSolarCloud.",
+    "location": "Porteña, Córdoba, Argentina",
+    "status": "operational",
+    "total_power_installed": "396.00",
+    "total_power_projected": "396.00",
+    "available_power": "396.00",
+    "price_per_wp_usd": "1.20",
+    "price_per_panel_usd": "792.00",
+    "panel_power_wp": "660.00",
+    "owners": "Cooperativa Ganadera, Agrícola y de consumo Porteña LTDA.",
+    "expected_annual_generation": "631350.00",
+    "financial_access_password": "iris2025",
+    "commercial_whatsapp": "+54 9 351 703-5589",
+    "funding_goal": "475200.00",
+    "funding_raised": "0.00",
+    "funding_deadline": "2024-08-19",
+    "created_at": "2025-08-19T13:40:45.613Z",
+    "updated_at": "2025-08-19T14:45:44.208Z"
+  }
+},
+{
+  "model": "projects.projectimage",
+  "pk": 1,
+  "fields": {
+    "project": 6,
+    "image": "projects/cooperativa-portena-solar.jpg",
+    "caption": "Instalación solar de la Cooperativa Ganadera en Porteña, Córdoba",
+    "is_featured": true,
+    "order": 1
+  }
+},
+{
+  "model": "projects.projectimage",
+  "pk": 2,
+  "fields": {
+    "project": 2,
+    "image": "projects/vgb.jpg",
+    "caption": "Instalación solar de la Cooperativa Luz y Fuerza en Villa General Belgrano, Córdoba",
+    "is_featured": true,
+    "order": 1
+  }
+},
+{
+  "model": "core.sitesettings",
+  "pk": 1,
+  "fields": {
+    "site_name": "Simulador CS",
+    "site_description": "Plataforma líder en simulación y cotización de inversiones en Comunidades Solares. Simulamos tus escenarios de inversión en energía solar.",
+    "contact_email": "info@simuladorcs.com",
+    "contact_phone": "54 11 4000-5000",
+    "address": "Av. Menéndez Pidal 3857, Córdoba, Argentina",
+    "facebook_url": "https://facebook.com/simuladorcs",
+    "twitter_url": "https://twitter.com/simuladorcs",
+    "linkedin_url": "https://linkedin.com/company/simuladorcs",
+    "instagram_url": "https://instagram.com/simuladorcs",
+    "meta_keywords": "energía solar, inversión, renovables, sustentabilidad, paneles solares, argentina",
+    "google_analytics_id": "",
+    "default_annual_generation_factor": "1500.00",
+    "default_performance_ratio": "0.850",
+    "created_at": "2025-08-18T22:03:06.682Z",
+    "updated_at": "2025-08-22T16:43:26.754Z"
+  }
+}
+]
