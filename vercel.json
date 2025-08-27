@@ -1,32 +1,21 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "api/index.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "runtime": "python3.9",
-        "memory": 1024,
-        "maxDuration": 30
-      }
+  "functions": {
+    "api/index.py": {
+      "runtime": "python3.13"
     }
-  ],
-  "routes": [
+  },
+  "rewrites": [
     {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
+      "source": "/static/(.*)",
+      "destination": "/static/$1"
     },
     {
-      "src": "/media/(.*)",
-      "dest": "/media/$1"
+      "source": "/media/(.*)", 
+      "destination": "/media/$1"
     },
     {
-      "src": "/(.*)",
-      "dest": "/api/index.py"
+      "source": "/(.*)",
+      "destination": "/api/index.py"
     }
-  ],
-  "env": {
-    "PYTHONPATH": ".:/var/task"
-  }
+  ]
 }
