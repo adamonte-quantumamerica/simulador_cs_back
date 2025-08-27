@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=65.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = []
+
+[project]
+name = "wesolar-backend"
+version = "1.0.0"
+description = "Backend para simulación de inversiones en proyectos solares comunitarios"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["*"]
+exclude = ["tests*", "*.tests*", "*.tests"]
+
+[tool.distutils]
+use_distutils = "stdlib"
