@@ -1,7 +1,3 @@
-# Build tools and compatibility
-setuptools>=65.0.0
-wheel>=0.38.0
-
 # Django Backend Dependencies
 Django==4.2.7
 djangorestframework==3.14.0
@@ -27,8 +23,8 @@ dj-database-url==2.1.0
 # Vercel deployment
 whitenoise==6.6.0
 
-# Image processing (optimized for serverless)
-Pillow==10.1.0
+# Image processing (compatible version)
+Pillow==9.5.0
 
 # Optional data handling (commented for faster builds)
 # pandas==2.1.3
