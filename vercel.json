@@ -6,14 +6,7 @@
       "use": "@vercel/python",
       "config": {
         "maxLambdaSize": "15mb",
-        "runtime": "python3.9"
-      }
-    },
-    {
-      "src": "build.py",
-      "use": "@vercel/python",
-      "config": {
-        "runtime": "python3.9"
+        "runtime": "python3.12"
       }
     }
   ],
@@ -32,15 +25,7 @@
     }
   ],
   "env": {
-    "DEVELOPMENT": "False",
-    "SECRET_KEY": "@secret-key",
-    "DATABASE_URL": "@database-url",
-    "DEBUG": "False",
-    "PYTHONPATH": ".:/var/task"
-  },
-  "functions": {
-    "api/index.py": {
-      "includeFiles": "**"
-    }
+    "PYTHONPATH": ".:/var/task",
+    "SETUPTOOLS_USE_DISTUTILS": "stdlib"
   }
 }
