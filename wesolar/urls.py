@@ -5,10 +5,18 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.http import HttpResponse
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+
+# Simple favicon handler
+def favicon_view(request):
+    return HttpResponse(status=204)  # No Content
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    # Handle common browser requests to reduce warnings
+    path('favicon.ico', favicon_view, name='favicon'),
     
     # Authentication endpoints
     path('auth/', include('authentication.urls')),
