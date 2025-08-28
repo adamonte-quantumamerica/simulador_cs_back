@@ -8,6 +8,7 @@ Mod 1 - rama staticfilesmanejo
 Mod 2 - rama djangofilters
 Mod 3 - rama favicon
 Mod 4 - rama urlsfix
+Mod 5 - rama djangosettingsfix
 
 ## 🚀 Tecnologías
 
