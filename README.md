@@ -6,6 +6,7 @@ API backend para la plataforma de simulación de inversiones en energía solar c
 
 Mod 1 - rama staticfilesmanejo
 Mod 2 - rama djangofilters
+Mod 3 - rama favicon
 
 ## 🚀 Tecnologías
 
