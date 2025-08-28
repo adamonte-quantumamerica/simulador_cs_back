@@ -23,6 +23,14 @@ def root_view(request):
     })
 
 # Redirect handlers for URLs missing /api/v1/ prefix
+def redirect_projects(request):
+    # Mantener los query parameters (como ?search=)
+    query_string = request.GET.urlencode()
+    redirect_url = '/api/v1/projects/'
+    if query_string:
+        redirect_url += '?' + query_string
+    return redirect(redirect_url)
+
 def redirect_projects_stats(request):
     return redirect('/api/v1/projects/stats/')
 
@@ -35,6 +43,17 @@ def redirect_exchange_rate(request):
 def redirect_settings(request):
     return redirect('/api/v1/settings/')
 
+def redirect_simulations(request):
+    # Mantener los query parameters
+    query_string = request.GET.urlencode()
+    redirect_url = '/api/v1/simulations/'
+    if query_string:
+        redirect_url += '?' + query_string
+    return redirect(redirect_url)
+
+def redirect_exchange_rates(request):
+    return redirect('/api/v1/exchange-rates/')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     
@@ -46,9 +65,12 @@ urlpatterns = [
     path('favicon.png', favicon_view, name='favicon-png'),
     
     # Redirect URLs missing /api/v1/ prefix (help frontend)
+    path('projects/', redirect_projects, name='redirect-projects'),
     path('projects/stats/', redirect_projects_stats, name='redirect-projects-stats'),
+    path('simulations/', redirect_simulations, name='redirect-simulations'),
     path('simulations/stats/', redirect_simulations_stats, name='redirect-simulations-stats'),
     path('exchange-rate/current/', redirect_exchange_rate, name='redirect-exchange-rate'),
+    path('exchange-rates/', redirect_exchange_rates, name='redirect-exchange-rates'),
     path('settings/', redirect_settings, name='redirect-settings'),
     
     # Authentication endpoints
