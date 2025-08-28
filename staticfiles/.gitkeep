@@ -1,0 +1,2 @@
+# Este archivo mantiene el directorio staticfiles en git
+# Django collectstatic poblará este directorio en producción
