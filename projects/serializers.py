@@ -4,15 +4,20 @@ from .models import SolarProject, ProjectImage, ProjectVideo
 
 class ProjectImageSerializer(serializers.ModelSerializer):
     """Serializer for project images"""
-    image_path = serializers.SerializerMethodField()
+    image_url = serializers.SerializerMethodField()
     
     class Meta:
         model = ProjectImage
-        fields = ['id', 'image_path', 'caption', 'is_featured', 'order']
+        fields = ['id', 'image_url', 'caption', 'is_featured', 'order']
     
-    def get_image_path(self, obj):
-        """Return relative path instead of absolute URL"""
-        return obj.image.name if obj.image else None
+    def get_image_url(self, obj):
+        """Return absolute URL for image"""
+        if obj.image:
+            request = self.context.get('request')
+            if request:
+                return request.build_absolute_uri(obj.image.url)
+            return obj.image.url
+        return None
 
 
 class ProjectVideoSerializer(serializers.ModelSerializer):
@@ -39,12 +44,13 @@ class SolarProjectListSerializer(serializers.ModelSerializer):
         ]
     
     def get_featured_image(self, obj):
-        """Get the featured image path (relative)"""
+        """Get the featured image URL"""
         featured_image = obj.images.filter(is_featured=True).first()
         if featured_image:
-            # Devolver solo el path relativo, no URL absoluta del backend
-            # El frontend construirá la URL completa
-            return featured_image.image.name if featured_image.image else None
+            request = self.context.get('request')
+            if request:
+                return request.build_absolute_uri(featured_image.image.url)
+            return featured_image.image.url
         return None
 
 
