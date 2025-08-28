@@ -5,7 +5,7 @@ import os
 
 def project_image_path(instance, filename):
     """Generate file path for project images"""
-    return f'projects/{instance.id}/images/{filename}'
+    return f'images/projects/{filename}'
 
 
 def project_video_path(instance, filename):

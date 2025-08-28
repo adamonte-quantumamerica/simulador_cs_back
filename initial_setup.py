@@ -151,14 +151,14 @@ def create_project_images():
     project_images = [
         {
             'project_name': 'Cooperativa Ganadera, Agrícola y de consumo Porteña LTDA.',
-            'image_path': 'projects/cooperativa-portena-solar.jpg',
+            'image_path': 'images/projects/cooperativa-portena-solar.jpg',
             'caption': 'Instalación solar de la Cooperativa Ganadera en Porteña, Córdoba',
             'is_featured': True,
             'order': 1
         },
         {
             'project_name': 'Cooperativa Luz y Fuerza Villa General Belgrano',
-            'image_path': 'projects/vgb.jpg',
+            'image_path': 'images/projects/vgb.jpg',
             'caption': 'Instalación solar de la Cooperativa Luz y Fuerza en Villa General Belgrano, Córdoba',
             'is_featured': True,
             'order': 1
