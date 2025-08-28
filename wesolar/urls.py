@@ -5,9 +5,10 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, FileResponse, Http404
 from django.shortcuts import redirect
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+import os
 
 # Simple handlers for common requests
 def favicon_view(request):
@@ -60,8 +61,18 @@ def redirect_tariff_categories(request):
 def redirect_project_detail(request, project_id):
     return redirect(f'/api/v1/projects/{project_id}/')
 
+def serve_media(request, path):
+    """Custom media file server for Vercel"""
+    media_path = os.path.join(settings.MEDIA_ROOT, path)
+    if os.path.exists(media_path) and os.path.isfile(media_path):
+        return FileResponse(open(media_path, 'rb'))
+    raise Http404("Media file not found")
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    # Custom media server (must be FIRST to avoid conflicts)
+    path('media/<path:path>', serve_media, name='media'),
     
     # Root endpoint
     path('', root_view, name='root'),
@@ -94,7 +105,6 @@ urlpatterns = [
     path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
 ]
 
-# Serve media files in development and production (for Vercel)
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Serve static files in development
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
