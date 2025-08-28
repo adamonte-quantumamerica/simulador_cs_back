@@ -5,6 +5,7 @@ API backend para la plataforma de simulación de inversiones en energía solar c
 # Mods para Vercel
 
 Mod 1 - rama staticfilesmanejo
+Mod 2 - rama djangofilters
 
 ## 🚀 Tecnologías
 
