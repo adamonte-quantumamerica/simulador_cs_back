@@ -11,6 +11,7 @@ Mod 4 - rama urlsfix
 Mod 5 - rama djangosettingsfix
 Mod 6 - rama pathimagenesfix
 Mod 7 - rama manejoimagenes backend
+Mod 8 - rama manejo imagenes segundo intento
 
 ## 🚀 Tecnologías
 
