@@ -139,13 +139,28 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-# WhiteNoise configuration for static files
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# WhiteNoise configuration for static files (solo en producción)
+if not DEBUG:
+    try:
+        import whitenoise
+        STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    except ImportError:
+        # Fallback si whitenoise no está disponible
+        pass
+else:
+    # En desarrollo usar el storage por defecto
+    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 # Static files directories
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
-] if (BASE_DIR / 'static').exists() else []
+]
+
+# Ensure staticfiles directory exists
+import os
+staticfiles_dir = BASE_DIR / 'staticfiles'
+if not staticfiles_dir.exists():
+    staticfiles_dir.mkdir(parents=True, exist_ok=True)
 
 MEDIA_URL = '/media/'
 if DEBUG:
