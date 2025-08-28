@@ -54,6 +54,12 @@ def redirect_simulations(request):
 def redirect_exchange_rates(request):
     return redirect('/api/v1/exchange-rates/')
 
+def redirect_tariff_categories(request):
+    return redirect('/api/v1/tariff-categories/')
+
+def redirect_project_detail(request, project_id):
+    return redirect(f'/api/v1/projects/{project_id}/')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     
@@ -66,9 +72,11 @@ urlpatterns = [
     
     # Redirect URLs missing /api/v1/ prefix (help frontend)
     path('projects/', redirect_projects, name='redirect-projects'),
+    path('projects/<int:project_id>/', redirect_project_detail, name='redirect-project-detail'),
     path('projects/stats/', redirect_projects_stats, name='redirect-projects-stats'),
     path('simulations/', redirect_simulations, name='redirect-simulations'),
     path('simulations/stats/', redirect_simulations_stats, name='redirect-simulations-stats'),
+    path('tariff-categories/', redirect_tariff_categories, name='redirect-tariff-categories'),
     path('exchange-rate/current/', redirect_exchange_rate, name='redirect-exchange-rate'),
     path('exchange-rates/', redirect_exchange_rates, name='redirect-exchange-rates'),
     path('settings/', redirect_settings, name='redirect-settings'),
@@ -86,7 +94,7 @@ urlpatterns = [
     path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
 ]
 
-# Serve media files in development
+# Serve media files in development and production (for Vercel)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
