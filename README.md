@@ -2,6 +2,10 @@
 
 API backend para la plataforma de simulación de inversiones en energía solar comunitaria.
 
+# Mods para Vercel
+
+Mod 1 - rama staticfilesmanejo
+
 ## 🚀 Tecnologías
 
 - **Django 4.2**: Framework web
