@@ -40,6 +40,7 @@ THIRD_PARTY_APPS = [
     'rest_framework',
     'corsheaders',
     'drf_spectacular',
+    'django_filters',
     # 'djoser',  # Comentado por problemas de entorno
     'rest_framework.authtoken',
 ]

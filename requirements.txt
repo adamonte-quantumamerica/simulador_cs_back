@@ -13,6 +13,9 @@ django-ratelimit==4.1.0
 # For API documentation
 drf-spectacular==0.26.5
 
+# Filtering and search
+django-filter==23.3
+
 # Development dependencies
 python-dotenv==1.0.0
 
