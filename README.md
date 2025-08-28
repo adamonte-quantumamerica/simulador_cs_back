@@ -14,6 +14,7 @@ Mod 7 - rama manejoimagenes backend
 Mod 8 - rama manejo imagenes segundo intento
 Mod 9 - rama cambio de static manejo img
 mod 10 - ramita imagenes
+mod 11- imagenesdef
 
 ## 🚀 Tecnologías
 
